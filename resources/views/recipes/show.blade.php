@@ -8,7 +8,19 @@
                 <div class="card-header">{{ $recipe->name }}</div>
 
                 <div class="card-body">
-                    This is a recipe by {{ $recipe->user->email }}
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Start Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($recipe->timings as $timing)
+                            <tr><td>{{ date('H:i', $timing->start_time) }}</td><td>{{ $timing->action }}</td></tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
