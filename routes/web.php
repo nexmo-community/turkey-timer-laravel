@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/recipes', 'RecipeController@index')->name('recipe.list');
+Route::get('/recipes/{recipe}', 'RecipeController@show')->name('recipe.show');
