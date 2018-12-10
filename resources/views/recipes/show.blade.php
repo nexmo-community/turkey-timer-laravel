@@ -17,7 +17,7 @@
                         </thead>
                         <tbody>
                         @foreach ($recipe->timings as $timing)
-                            <tr><td>{{ date('H:i', $timing->start_time) }}</td><td>{{ $timing->action }}</td></tr>
+                            <tr><td>{{ date('H\hi', $timing->start_time) }}</td><td>{{ $timing->action }}</td></tr>
                         @endforeach
                         </tbody>
                     </table>
