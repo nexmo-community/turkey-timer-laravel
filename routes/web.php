@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/recipes', 'RecipeController@index')->name('recipe.list');
 Route::get('/recipes/{recipe}', 'RecipeController@show')->name('recipe.show');
+
+Route::post('/webhooks/inbound-message', 'WebhooksController@inboundMessage')->name('webhooks.inbound');
+Route::post('/webhooks/message-status', 'WebhooksController@messageStatus')->name('webhooks.status');
